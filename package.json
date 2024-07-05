@@ -14,19 +14,24 @@
     "antd": "^5.19.0",
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",
+    "html-prettify": "^1.0.7",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-live": "^4.1.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@babel/parser": "^7.24.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "angular-html-parser": "^5.2.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
+    "prettier": "^3.3.2",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

@@ -29,13 +29,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
       const generatedLlm = model.withStructuredOutput(generatedCode);
 
       const generated = await generatedLlm.invoke(`
-        ${JSON.stringify(figmaConfig.data)} 
+        ${JSON.stringify(figmaConfig.data)}\n\n
 
-        generate a react code immediately from this figma node information. 
-        Use tailwind for styling. 
+        You are a developer who needs to convert a Figma configuration JSON object into corresponding JSX code for a React component. 
+        The Figma JSON object includes information about various UI elements such as buttons, text fields, and containers. 
+        The task involves translating the structure and properties defined in the JSON object into JSX code, using Tailwind CSS for styling.
+
         Determine which elements can be nested and make sure you use em or rem units for more responsiveness. 
-        If the width is 1920 make the width full. If height is 1080 make the height 100vh.
-        for positioning. Use flexbox as much as possible. Only give the return value and omit the return keyword.
+        Use flexbox for the layout and make sure positioning and alignment is correct. 
+        Only give the return value and omit the return keyword.
         Only JSX syntax should remain and remove new line characters
     `);
 
