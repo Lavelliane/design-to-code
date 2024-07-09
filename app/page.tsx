@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Form, Input, Spin } from "antd";
 import axios from "axios";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
-import * as prettier from "prettier";
+import parse from 'html-react-parser';
 
 const HomePage: React.FC = () => {
   const [designForm] = Form.useForm();
@@ -53,9 +53,12 @@ const HomePage: React.FC = () => {
           <LiveEditor />
           <p className="mt-4">Errors:</p>
           <LiveError />
-          <p className="mt-4">Preview:</p>
-          <LivePreview />
+          
         </LiveProvider>
+        <p className="mt-4">Preview:</p>
+        <div className="w-full">
+          { codePreview && parse(codePreview) }
+        </div>
       </div>
     </>
   );
